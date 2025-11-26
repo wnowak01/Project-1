@@ -1,2 +1,7 @@
-# Project-1
-smart me
+service cron start
+crontab -1 > /tmp/mycron
+
+- echo "*/11 * * * * root python3 /opt/app/scanner.py >> /var/log/scanner.log 2>&1">> /tmp/mycron
+  + echo "*/11 * * * * python3 /opt/app/scanner.py >> /var/log/acanner.log 2>&1" >> /tmp/mycron
+crontab /tmp/mycron
+rm /tmp/mycron
